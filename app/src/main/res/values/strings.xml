@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">MemoriesApplicationApp</string>
     <string name="goToMemoriesButton">Memories</string>
-    <string name="goToDiaryButton">Diarys</string>
+    <string name="goToDiaryButton">Diary</string>
     <string name="addDiary">add</string>
     <string name="showAllDiary">show all diarys</string>
+    <string name="removeButtonDiaryDetail">remove</string>
+    <string name="editButtonDiaryDetail">edit</string>
 </resources>
