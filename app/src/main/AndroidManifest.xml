@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".AddDiaryActivity" />
         <activity android:name=".CheckDiaryActivity" />
-        <activity android:name=".ShowListDiaryActivity"></activity>
+        <activity android:name=".ShowListDiaryActivity" />
+        <activity android:name=".ShowDiaryDetailsActivity"></activity>
     </application>
 
 </manifest>
