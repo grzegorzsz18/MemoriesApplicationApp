@@ -25,4 +25,9 @@ public class DiaryService {
     public static DiaryPost getDiaryById(int id){
         return diaryList.get(id);
     }
+
+    public static void removeDiaryById(int id){
+        diaryList.get(id).text = "usunieto";
+    }
+
 }
