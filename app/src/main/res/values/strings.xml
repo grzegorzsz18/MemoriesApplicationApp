@@ -6,4 +6,8 @@
     <string name="showAllDiary">show all diarys</string>
     <string name="removeButtonDiaryDetail">remove</string>
     <string name="editButtonDiaryDetail">edit</string>
+    <string name="loginButtonLogin">login</string>
+    <string name="loginButtonRegister">register now</string>
+    <string name="registerButtonRegister">submit</string>
+    <string name="createNewUser">Fill all fields to register new user</string>
 </resources>

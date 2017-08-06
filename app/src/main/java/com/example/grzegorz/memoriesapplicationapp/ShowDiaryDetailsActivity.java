@@ -1,12 +1,11 @@
 package com.example.grzegorz.memoriesapplicationapp;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class ShowDiaryDetailsActivity extends AppCompatActivity {
+public class ShowDiaryDetailsActivity extends Activity {
 
     int diaryId;
     @Override
