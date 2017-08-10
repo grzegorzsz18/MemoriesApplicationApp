@@ -6,4 +6,5 @@ package com.example.grzegorz.memoriesapplicationapp;
 
 public class ConstantsValues{
     public final static String DIARY_ID = "id";
+    public static final String SERVER_URL = "http://145.239.84.11:8080/";
 }

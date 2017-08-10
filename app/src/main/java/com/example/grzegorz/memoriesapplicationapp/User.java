@@ -1,18 +1,17 @@
 package com.example.grzegorz.memoriesapplicationapp;
 
-import java.util.Date;
 
 /**
  * Created by Grzegorz on 2017-08-06.
  */
 
 public class User {
-    int id;
-    long birthdate;
-    String password;
-    String login;
-    String name;
-    String surName;
+    int id=0;
+    long birthdate=0;
+    String password="";
+    String login="";
+    String name="";
+    String surName="";
 
     public User(String login, String name, String surName, String password, long birthdate) {
         this.login = login;
@@ -22,6 +21,9 @@ public class User {
         this.birthdate = birthdate;
     }
 
+    public User(){
+
+    }
     public int getId() {
         return id;
     }
