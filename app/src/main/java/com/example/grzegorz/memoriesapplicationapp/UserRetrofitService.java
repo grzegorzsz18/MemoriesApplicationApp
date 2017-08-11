@@ -1,8 +1,12 @@
 package com.example.grzegorz.memoriesapplicationapp;
+import java.util.List;
+
 import okhttp3.ResponseBody;
 import retrofit2.*;
 import retrofit.Callback;
 import retrofit.http.Body;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 import retrofit.http.Path;
@@ -18,4 +22,13 @@ public interface UserRetrofitService {
 
     @POST("/user/getToken/")
     Call<ResponseBody> getToken(@retrofit2.http.Body User user);
+
+    @PUT("/diary/add/{token}/")
+    Call<ResponseBody> addDiary(@retrofit2.http.Body DiaryPost diary, @retrofit2.http.Path("token") String token);
+
+    @GET("diary/byUser/{token}/")
+    Call<List<DiaryPost>> getAllDiarys(@retrofit2.http.Path("token") String token);
+
+    @GET("diary/byId/{id}/{token}")
+    Call<DiaryPost> getDiaryDetail(@retrofit2.http.Path("id") int id, @retrofit2.http.Path("token") String token);
 }

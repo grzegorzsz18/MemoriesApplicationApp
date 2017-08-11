@@ -12,6 +12,8 @@ public class AuthService {
         return token;
     }
 
+    public static String getLogin(){ return userName;}
+
     public static void setToken(String tok){ token = tok;}
 
     public static void setUserName(String na){userName = na;}

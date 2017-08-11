@@ -18,4 +18,9 @@ public class CheckDiaryActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void goToAddDiaryPage(View view){
+        Intent intent = new Intent(this,AddDiaryActivity.class);
+        startActivity(intent);
+    }
 }

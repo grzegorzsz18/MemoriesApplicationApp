@@ -22,24 +22,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
             android:ems="10"
-            android:id="@+id/editText" />
+            android:id="@+id/titleAddDiary"
+            android:hint="title" />
 
         <EditText
             android:layout_weight="15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Name"
+            android:inputType="textAutoCorrect|textAutoComplete|textPersonName"
             android:ems="10"
-            android:id="@+id/editText3" />
+            android:id="@+id/textAddDiary"
+            android:hint="text"
+            android:gravity="top|center_vertical" />
 
         <Button
-            android:text="Button"
+            android:text="@string/addNewDiaryButton"
+            android:onClick="addNewDiary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button"
+            android:id="@+id/buttonAddNewDiary"
             android:layout_weight="1" />
 
     </LinearLayout>
