@@ -11,4 +11,6 @@
     <string name="registerButtonRegister">submit</string>
     <string name="createNewUser">Fill all fields to register new user</string>
     <string name="addNewDiaryButton">add diary</string>
+    <string name="backButtonEditDiary">back</string>
+    <string name="confirmedButtonEditDiary">confirm changes</string>
 </resources>

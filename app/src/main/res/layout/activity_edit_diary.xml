@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_show_diary_details"
+    android:id="@+id/activity_edit_diary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.grzegorz.memoriesapplicationapp.ShowDiaryDetailsActivity">
+    tools:context="com.example.grzegorz.memoriesapplicationapp.EditDiaryActivity">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp">
 
-        <TextView
+        <EditText
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/diaryTitle" />
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/titleEditDiary"
+            android:hint="title" />
 
-        <TextView
-            android:layout_weight="1"
+        <EditText
+            android:layout_weight="10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/diaryDate" />
-
-        <TextView
-            android:layout_weight="8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/diaryText" />
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/textEditDiary"
+            android:hint="text" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true">
-            <Button
-                android:text="@string/removeButtonDiaryDetail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/remove"
-                android:onClick="removeDiary"/>
+            android:layout_height="72dp">
 
             <Button
-                android:text="@string/editButtonDiaryDetail"
-                android:onClick="modify"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
+                android:text="@string/backButtonEditDiary"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/edit" />
+                android:id="@+id/backButtonEditDiary"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="@string/confirmedButtonEditDiary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/confirmedButtonEditDiary"
+                android:layout_weight="1"
+                android:onClick="confirmChanges" />
         </LinearLayout>
+
     </LinearLayout>
 </RelativeLayout>

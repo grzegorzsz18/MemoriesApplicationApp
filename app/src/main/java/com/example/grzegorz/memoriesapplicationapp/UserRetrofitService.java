@@ -31,4 +31,7 @@ public interface UserRetrofitService {
 
     @GET("diary/byId/{id}/{token}")
     Call<DiaryPost> getDiaryDetail(@retrofit2.http.Path("id") int id, @retrofit2.http.Path("token") String token);
+
+    @POST("diary/modify/{token}")
+    Call<DiaryPost> modifyDiary(@retrofit2.http.Body DiaryPost diaryPost, @retrofit2.http.Path("token") String token);
 }

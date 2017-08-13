@@ -61,4 +61,17 @@ public class ShowDiaryDetailsActivity extends Activity {
         //DiaryService.removeDiaryById(diaryId);
 
     }
+
+    public void modify(View view){
+        Intent intent = new Intent(ShowDiaryDetailsActivity.this, EditDiaryActivity.class);
+        TextView title = (TextView) findViewById(R.id.diaryTitle);
+        TextView text = (TextView) findViewById(R.id.diaryText);
+        String tit = title.getText().toString();
+        String tex = text.getText().toString();
+        intent.putExtra(ConstantsValues.DIARY_ID, diaryId);
+        intent.putExtra(ConstantsValues.DIARY_TEXT, tex);
+        intent.putExtra(ConstantsValues.DIARY_TITLE, tit);
+        startActivity(intent);
+
+    }
 }

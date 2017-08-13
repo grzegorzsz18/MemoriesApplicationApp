@@ -43,13 +43,13 @@ public class ShowListDiaryActivity extends ListActivity {
                             diary.setDate(response.body().get(i).getDate());
                             diaryList.add(diary);
                         }
-                        ArrayAdapter<DiaryPost> adapter = new ArrayAdapter<DiaryPost>(
-                                ShowListDiaryActivity.this,
-                                android.R.layout.simple_list_item_1,
-                                diaryList
-                        );
-                        ListView listView = getListView();
-                        listView.setAdapter(adapter);
+                            ArrayAdapter<DiaryPost> adapter = new ArrayAdapter<DiaryPost>(
+                                    ShowListDiaryActivity.this,
+                                    android.R.layout.simple_list_item_1,
+                                    diaryList
+                            );
+                            ListView listView = getListView();
+                            listView.setAdapter(adapter);
                     }
                 }
 
