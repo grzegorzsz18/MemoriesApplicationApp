@@ -1,5 +1,6 @@
 package com.example.grzegorz.memoriesapplicationapp;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,8 +46,7 @@ public class AddDiaryActivity extends Activity {
                 if(response.isSuccessful()) {
                     if(response.body() != null){
                         Toast.makeText(AddDiaryActivity.this, "diary created!", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(AddDiaryActivity.this, ShowListDiaryActivity.class);
-                        startActivity(intent);
+                        AddDiaryActivity.super.onBackPressed();
                     } else {
                         Toast.makeText(AddDiaryActivity.this, "sth wrong", Toast.LENGTH_SHORT).show();
                     }

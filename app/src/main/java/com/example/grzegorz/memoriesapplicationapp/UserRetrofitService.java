@@ -34,4 +34,7 @@ public interface UserRetrofitService {
 
     @POST("diary/modify/{token}")
     Call<DiaryPost> modifyDiary(@retrofit2.http.Body DiaryPost diaryPost, @retrofit2.http.Path("token") String token);
+
+    @POST("diary/delete/{token}")
+    Call<DiaryPost> deleteDiary(@retrofit2.http.Body int id, @retrofit2.http.Path("token") String token);
 }

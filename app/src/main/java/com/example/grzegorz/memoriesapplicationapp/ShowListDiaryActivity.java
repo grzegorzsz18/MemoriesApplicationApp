@@ -22,7 +22,6 @@ public class ShowListDiaryActivity extends ListActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(ConstantsValues.SERVER_URL)
                     .addConverterFactory(GsonConverterFactory.create())
@@ -34,6 +33,11 @@ public class ShowListDiaryActivity extends ListActivity {
                 @Override
                 public void onResponse(Call<List<DiaryPost>> call, retrofit2.Response<List<DiaryPost>> response) {
                     if(response.isSuccessful()) {
+                        if(response.body() == null){
+                            Toast.makeText(ShowListDiaryActivity.this, "Nothing to show", Toast.LENGTH_SHORT).show();
+                            ShowListDiaryActivity.super.onBackPressed();
+                            return;
+                        }
                         for(int i =0 ; i <response.body().size(); i++){
                             DiaryPost diary = new DiaryPost();
                             diary.setId(response.body().get(i).getId());

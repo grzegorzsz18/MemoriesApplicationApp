@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MemoriesApplicationApp</string>
+    <string name="app_name">LIBRARY APP</string>
     <string name="goToMemoriesButton">Memories</string>
     <string name="goToDiaryButton">Diary</string>
     <string name="addDiary">add</string>

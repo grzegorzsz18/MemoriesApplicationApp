@@ -47,8 +47,7 @@ public class EditDiaryActivity extends AppCompatActivity {
         call.enqueue(new retrofit2.Callback<DiaryPost>() {
             @Override
             public void onResponse(Call<DiaryPost> call, retrofit2.Response<DiaryPost> response) {
-                Intent intent = new Intent(EditDiaryActivity.this,ShowListDiaryActivity.class);
-                startActivity(intent);
+                EditDiaryActivity.super.onBackPressed();
             }
 
             @Override
@@ -58,5 +57,9 @@ public class EditDiaryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void back(View view){
+        super.onBackPressed();
     }
 }

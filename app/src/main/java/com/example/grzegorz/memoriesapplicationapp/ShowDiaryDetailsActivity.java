@@ -58,7 +58,33 @@ public class ShowDiaryDetailsActivity extends Activity {
 
 
     public void removeDiary(View view) {
-        //DiaryService.removeDiaryById(diaryId);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(ConstantsValues.SERVER_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        UserRetrofitService userService = retrofit.create(UserRetrofitService.class);
+        final Call<DiaryPost> call = userService.deleteDiary(diaryId, AuthService.getToken());
+        call.enqueue(new retrofit2.Callback<DiaryPost>() {
+            @Override
+            public void onResponse(Call<DiaryPost> call, retrofit2.Response<DiaryPost> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(ShowDiaryDetailsActivity.this, "diary removed", Toast.LENGTH_SHORT).show();
+                    ShowDiaryDetailsActivity.super.onBackPressed();
+                }
+                else{
+                    Toast.makeText(ShowDiaryDetailsActivity.this, "sth wrong", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DiaryPost> call, Throwable t) {
+                Toast.makeText(ShowDiaryDetailsActivity.this, "you have been logged out", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ShowDiaryDetailsActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
