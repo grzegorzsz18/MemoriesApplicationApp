@@ -20,8 +20,8 @@ public interface UserRetrofitService {
     @PUT("/user/add/")
     Call<ResponseBody> addUser(@retrofit2.http.Body User body);
 
-    @POST("/user/getToken/")
-    Call<ResponseBody> getToken(@retrofit2.http.Body User user);
+    @POST("/user/getUser/")
+    Call<User> getToken(@retrofit2.http.Body User user);
 
     @PUT("/diary/add/{token}/")
     Call<ResponseBody> addDiary(@retrofit2.http.Body DiaryPost diary, @retrofit2.http.Path("token") String token);

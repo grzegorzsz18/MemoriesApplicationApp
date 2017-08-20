@@ -19,6 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ShowListDiaryActivity extends ListActivity {
     ArrayList<DiaryPost> diaryList = new ArrayList<DiaryPost>();
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -28,7 +29,7 @@ public class ShowListDiaryActivity extends ListActivity {
                     .build();
 
             UserRetrofitService userService = retrofit.create(UserRetrofitService.class);
-            final Call<List<DiaryPost>> call = userService.getAllDiarys(AuthService.getToken());
+            final Call<List<DiaryPost>> call = userService.getAllDiarys(AuthService.getUser().getToken());
             call.enqueue(new retrofit2.Callback<List<DiaryPost>>() {
                 @Override
                 public void onResponse(Call<List<DiaryPost>> call, retrofit2.Response<List<DiaryPost>> response) {

@@ -33,7 +33,7 @@ public class ShowDiaryDetailsActivity extends Activity {
                 .build();
 
         UserRetrofitService userService = retrofit.create(UserRetrofitService.class);
-        final Call<DiaryPost> call = userService.getDiaryDetail(diaryId, AuthService.getToken());
+        final Call<DiaryPost> call = userService.getDiaryDetail(diaryId, AuthService.getUser().getToken());
         call.enqueue(new retrofit2.Callback<DiaryPost>() {
             @Override
             public void onResponse(Call<DiaryPost> call, retrofit2.Response<DiaryPost> response) {
@@ -64,13 +64,14 @@ public class ShowDiaryDetailsActivity extends Activity {
                 .build();
 
         UserRetrofitService userService = retrofit.create(UserRetrofitService.class);
-        final Call<DiaryPost> call = userService.deleteDiary(diaryId, AuthService.getToken());
+        final Call<DiaryPost> call = userService.deleteDiary(diaryId, AuthService.getUser().getToken());
         call.enqueue(new retrofit2.Callback<DiaryPost>() {
             @Override
             public void onResponse(Call<DiaryPost> call, retrofit2.Response<DiaryPost> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(ShowDiaryDetailsActivity.this, "diary removed", Toast.LENGTH_SHORT).show();
-                    ShowDiaryDetailsActivity.super.onBackPressed();
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(ShowDiaryDetailsActivity.this, "sth wrong", Toast.LENGTH_SHORT).show();

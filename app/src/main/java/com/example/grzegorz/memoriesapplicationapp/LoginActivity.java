@@ -15,6 +15,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoginActivity extends AppCompatActivity {
 
     @Override
+    public void onBackPressed(){
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -36,18 +40,20 @@ public class LoginActivity extends AppCompatActivity {
                 .build();
 
         UserRetrofitService userService = retrofit.create(UserRetrofitService.class);
-        final Call<ResponseBody> call = userService.getToken(user);
-        call.enqueue(new retrofit2.Callback<ResponseBody>() {
+        final Call<User> call = userService.getToken(user);
+        call.enqueue(new retrofit2.Callback<User>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
+            public void onResponse(Call<User> call, retrofit2.Response<User> response) {
                 if(response.isSuccessful()) {
                     if(response.body() != null){
-                    try {
-                        AuthService.setToken(response.body().string());
-                        AuthService.setUserName(user.getLogin());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                        User user = new User(response.body().getLogin(),
+                                response.body().getName(),
+                                response.body().getSurName(),
+                                response.body().getPassword(),
+                                response.body().getBirthdate(),
+                                response.body().getEmail(),
+                                response.body().getToken());
+                        AuthService.setUser(user);
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                     } else {
@@ -62,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(Call<User> call, Throwable t) {
                 TextView errorTV = (TextView)findViewById(R.id.loginErrorMessageField);
                 errorTV.setText("problem with connection");
             }

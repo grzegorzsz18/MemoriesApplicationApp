@@ -65,6 +65,14 @@
             android:id="@+id/registerPasswordConfirm"
             android:hint="repeat password" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/registerEmail"
+            android:hint="email" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

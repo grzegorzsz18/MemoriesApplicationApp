@@ -12,18 +12,38 @@ public class User {
     String login="";
     String name="";
     String surName="";
+    String email;
+    String token;
 
-    public User(String login, String name, String surName, String password, long birthdate) {
+    public User(String login, String name, String surName, String password, long birthdate, String email, String token) {
         this.login = login;
         this.name = name;
         this.surName = surName;
         this.password = password;
         this.birthdate = birthdate;
+        this.email = email;
+        this.token = token;
+    }
+
+    public User(String login, String name, String surName, String password, long birthdate, String email) {
+        this.login = login;
+        this.name = name;
+        this.surName = surName;
+        this.password = password;
+        this.birthdate = birthdate;
+        this.email = email;
     }
 
     public User(){
 
     }
+
+    public String getEmail(){ return email;}
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
     public int getId() {
         return id;
     }
@@ -70,5 +90,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

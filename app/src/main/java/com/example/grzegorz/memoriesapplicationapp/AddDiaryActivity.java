@@ -29,7 +29,7 @@ public class AddDiaryActivity extends Activity {
         DiaryPost diary = new DiaryPost();
         diary.setText(textTV.getText().toString());
         diary.setTitle(titleTV.getText().toString());
-        diary.setAuthor(AuthService.getLogin());
+        diary.setAuthor(AuthService.getUser().getLogin());
         diary.setDate(System.currentTimeMillis());
 
 
@@ -39,7 +39,7 @@ public class AddDiaryActivity extends Activity {
                 .build();
 
         UserRetrofitService userService = retrofit.create(UserRetrofitService.class);
-        final Call<ResponseBody> call = userService.addDiary(diary, AuthService.getToken());
+        final Call<ResponseBody> call = userService.addDiary(diary, AuthService.getUser().getToken());
         call.enqueue(new retrofit2.Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {

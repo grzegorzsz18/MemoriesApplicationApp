@@ -36,14 +36,16 @@ public class RegisterActivity extends AppCompatActivity {
             TextView nameTV = (TextView) findViewById(R.id.registerName);
             TextView sNameTV = (TextView) findViewById(R.id.registerSname);
             TextView loginTV = (TextView) findViewById(R.id.registerLogin);
+            TextView emailTV = (TextView) findViewById(R.id.registerEmail);
             String name = nameTV.getText().toString();
             String sName = sNameTV.getText().toString();
             String login = loginTV.getText().toString();
+            String email = emailTV.getText().toString();
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(ConstantsValues.SERVER_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
-            User user = new User(login, name, sName, password, (new Date((System.currentTimeMillis()))).getTime());
+            User user = new User(login, name, sName, password, (new Date((System.currentTimeMillis()))).getTime(), email);
             UserRetrofitService userService = retrofit.create(UserRetrofitService.class);
             final Call<ResponseBody> call = userService.addUser(user);
             call.enqueue(new retrofit2.Callback<ResponseBody>() {

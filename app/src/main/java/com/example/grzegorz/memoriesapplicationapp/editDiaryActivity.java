@@ -41,13 +41,14 @@ public class EditDiaryActivity extends AppCompatActivity {
         diaryPost.setTitle(title.getText().toString());
         diaryPost.setText(text.getText().toString());
         diaryPost.setId(diaryId);
-        diaryPost.setAuthor(AuthService.getLogin());
+        diaryPost.setAuthor(AuthService.getUser().getLogin());
 
-        final Call<DiaryPost> call = userService.modifyDiary(diaryPost,AuthService.getToken());
+        final Call<DiaryPost> call = userService.modifyDiary(diaryPost,AuthService.getUser().getToken());
         call.enqueue(new retrofit2.Callback<DiaryPost>() {
             @Override
             public void onResponse(Call<DiaryPost> call, retrofit2.Response<DiaryPost> response) {
-                EditDiaryActivity.super.onBackPressed();
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
             }
 
             @Override
