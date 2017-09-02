@@ -23,7 +23,9 @@
         <activity android:name=".ShowDiaryDetailsActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".EditDiaryActivity"></activity>
+        <activity android:name=".EditDiaryActivity" />
+        <activity android:name=".ReminderActivity" />
+        <activity android:name=".ReminderDetails"></activity>
     </application>
 
 </manifest>

@@ -13,4 +13,5 @@
     <string name="addNewDiaryButton">add diary</string>
     <string name="backButtonEditDiary">back</string>
     <string name="confirmedButtonEditDiary">confirm changes</string>
+    <string name="reminderPage">reminder</string>
 </resources>

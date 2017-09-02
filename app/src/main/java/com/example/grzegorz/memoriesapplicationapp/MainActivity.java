@@ -28,4 +28,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,CheckDiaryActivity.class);
         startActivity(intent);
     }
+
+    public void goToReminderPage(View view){
+        Intent intent = new Intent(this, ReminderActivity.class);
+        startActivity(intent);
+    }
 }

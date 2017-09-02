@@ -1,4 +1,5 @@
 package com.example.grzegorz.memoriesapplicationapp;
+import java.util.Date;
 import java.util.List;
 
 import okhttp3.ResponseBody;
@@ -37,4 +38,14 @@ public interface UserRetrofitService {
 
     @POST("diary/delete/{token}")
     Call<DiaryPost> deleteDiary(@retrofit2.http.Body int id, @retrofit2.http.Path("token") String token);
+
+    @GET("calendar/getAll/{token}")
+    Call<List<Calendar>> getAllReminder(@retrofit2.http.Path("token") String token);
+
+    @GET("calendar/getAllBetween/{token}/{from}/{to}")
+    Call<List<Calendar>> getAllBetween(@retrofit2.http.Path("token") String token, @retrofit2.http.Path("from") long from,
+                                       @retrofit2.http.Path("to") long to);
+
+    @GET("calendar/getById/{token}/{id}")
+    Call<Calendar> getCalendarById(@retrofit2.http.Path("token") String token, @retrofit2.http.Path("id") int id);
 }

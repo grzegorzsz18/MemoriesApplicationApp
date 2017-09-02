@@ -65,10 +65,11 @@
                 android:layout_weight="1" />
 
             <Button
-                android:text="Button"
+                android:text="@string/reminderPage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/goToNotificationButton"
+                android:onClick="goToReminderPage"
                 android:layout_weight="1" />
 
             <Button
